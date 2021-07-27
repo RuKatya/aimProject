@@ -55,7 +55,7 @@ function setTime(value) {
 function finishGame() {
     timeEl.parentNode.classList.add('hide')
     board.innerHTML = `<h1>Score is: <span class="primary">${score}</span></h1>
-    <a href='/' class="againBtn"> Try again!</a>`
+    <button class="againBtn" onClick="reload()"> Try again!</button>`
 }
 
 function createRandomCircle() {
@@ -84,4 +84,8 @@ function getRandomNumber(min, max) {
 function getRandomColor() {
     const random = Math.floor(Math.random * colors.length)
     return colors[random]
+}
+
+function reload() {
+    window.location.reload();
 }
